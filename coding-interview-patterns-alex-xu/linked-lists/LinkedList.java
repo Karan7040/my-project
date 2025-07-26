@@ -180,6 +180,8 @@ public class LinkedList {
 class Node {
     Node next;
     int value;
+    int key;
+    Node previous;
 
     public Node(int value) {
         this.value = value;
