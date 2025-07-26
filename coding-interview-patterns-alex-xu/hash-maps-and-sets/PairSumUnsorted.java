@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Map;
-
 public class PairSumUnsorted {
     int[] pairSumUnsorted(int[] arr, int target) {
         for (int i = 0; i < arr.length; i++) {

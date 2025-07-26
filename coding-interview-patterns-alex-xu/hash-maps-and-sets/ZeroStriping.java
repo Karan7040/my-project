@@ -52,5 +52,61 @@ public class ZeroStriping {
         }
     }
 
+    void zeroStripingOptimized(int[][] arr) {
+        int rows = arr.length;
+        int columns = arr[0].length;
+        boolean firstRowHasZero = false;
+        boolean firstColumnHasZero = false;
+
+        for (int j = 0; j < columns; j++) {
+            if (arr[0][j] == 0) {
+                firstRowHasZero = true;
+                break;
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            if (arr[i][0] == 0) {
+                firstColumnHasZero = true;
+                break;
+            }
+        }
+
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < columns; j++) {
+                if (arr[i][j] == 0) {
+                    arr[i][0] = 0;
+                    arr[0][j] = 0;
+                }
+            }
+        }
+
+        for (int i = 1; i < rows; i++) {
+            if (arr[i][0] == 0) {
+                for (int j = 0; j < columns; j++) {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+
+        for (int j = 1; j < columns; j++) {
+            if (arr[0][j] == 0) {
+                for (int i = 0; i < rows; i++) {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+
+        if (firstRowHasZero) {
+            for (int j = 0; j < columns; j++) {
+                arr[0][j] = 0;
+            }
+        }
+
+        if (firstColumnHasZero) {
+            for (int i = 0; i < rows; i++) {
+                arr[i][0] = 0;
+            }
+        }
+    }
 
 }
