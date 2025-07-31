@@ -25,8 +25,9 @@ public class RightMostNodeOfBinaryTree {
                     result.add(node.val);
                 }
             }
-            return result;
 
         }
+        return result;
+
     }
 }
