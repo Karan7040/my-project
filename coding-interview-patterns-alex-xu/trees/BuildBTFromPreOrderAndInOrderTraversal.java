@@ -19,6 +19,7 @@ public class BuildBTFromPreOrderAndInOrderTraversal {
         if (inStart > inEnd) {
             return null;
         }
+
         int rootValue = preorder[preOrderIndex++];
         TreeNode node = new TreeNode(rootValue);
         Integer index = inorderAsMap.get(rootValue);
